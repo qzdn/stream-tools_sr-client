@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 
 def update_links():
-    file = open("./backend-mock/requestsData.json", "r")
+    file = open("./requestsData.json", "r")
     requests_data = json.load(file)
     file.close()
     for request in requests_data:
@@ -20,7 +20,7 @@ def update_links():
 @app.route("/queue", methods=["GET"])
 def queue():
     # update_links()
-    file = open("./backend-mock/requestsData.json", "r")
+    file = open("./requestsData.json", "r")
     requests = json.load(file)
     file.close()
     resp = make_response(jsonify(requests), 200)
