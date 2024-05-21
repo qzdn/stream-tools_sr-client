@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.1",
   "description": "A song requests service for Twitch.",
-  "homepage": "https://github.com/qzdn/song-requests",
+  "homepage": "https://github.com/qzdn/twitch-tools_sr-client",
   "license": "MIT",
   "type": "module",
   "scripts": {
@@ -14,12 +14,17 @@
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^3.1.0",
+    "postcss": "^8.4.38",
     "prettier": "^3.2.5",
     "prettier-plugin-svelte": "^3.2.3",
+    "sass": "^1.77.2",
     "svelte": "^4.2.17",
+    "tailwindcss": "^3.4.3",
     "vite": "^5.2.11"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "4.17.2"
-  }
+  },
+  "dependencies": {},
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }
