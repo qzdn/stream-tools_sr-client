@@ -1,14 +1,27 @@
-import { writable } from 'svelte/store';
+import { writable } from "svelte/store";
+
+// Store for requests -----------
 
 export const requestsStore = writable([]);
-const API_URL = "http://localhost:6789/queue";
+const API_URL = "https://backend-yvq7.onrender.com/song-requests/";
 
-async function fetchData() {
-    const response = await fetch(API_URL); // Replace with your actual API URL
-    const data = await response.json();
-    requestsStore.set(data);
+export async function fetchData() {
+  const response = await fetch(API_URL);
+  const data = await response.json();
+  requestsStore.set(data);
 }
 
-// Call the function to fetch data (e.g., on store creation or interval)
-fetchData();
-setInterval(fetchData, 30 * 1000);
+// ------------------------------
+
+// Store for video player state -
+
+// export const playerStore = writable({
+//   isPlaying: false,
+//   muted: false,
+//   volume: 0.25,
+//   playbackRate: 1.0,
+//   loop: false,
+//   currentTime: 0,
+// });
+
+// -----------------------------
