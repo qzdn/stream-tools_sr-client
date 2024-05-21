@@ -1,14 +1,13 @@
 <script lang="ts">
-  import { requestsStore } from "../lib/stores";
+  import { requestsStore, fetchData } from "../../lib/stores.ts";
 
-  let requests: string | any[];
+  fetchData();
+  setInterval(fetchData, 60 * 1000);
+
+  let data;
   requestsStore.subscribe((value) => {
-    requests = value;
+    data = value;
   });
-
-  function skipRequest() {
-    if (requests.length > 0) requestsStore.update((v) => v.slice(1));
-  }
 
   function timeFormatter(videoLength: number) {
     const minutes = Math.floor(videoLength / 60);
@@ -22,20 +21,18 @@
   }
 </script>
 
-{#if requests && requests.length > 0}
-  <table>
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">requester</th>
-        <th scope="col">title</th>
-        <th scope="col">length</th>
-      </tr>
-    </thead>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">requester</th>
+      <th scope="col">title</th>
+      <th scope="col">length</th>
+    </tr>
+  </thead>
+  {#if data && data.requests && data.requests.length > 0}
     <tbody>
-      {#each requests as request}
+      {#each data.requests as request}
         <tr>
-          <td>{request.id}</td>
           <td>{request.requester}</td>
           <td
             ><a href="https://www.youtube.com/watch?v={request.videoId}"
@@ -46,15 +43,14 @@
         </tr>
       {/each}
     </tbody>
-  </table>
-{/if}
-
-<button on:click={skipRequest}>Skip</button>
+  {/if}
+</table>
 
 <style>
   table {
     overflow-x: auto;
     text-align: center;
+    width: 640px;
   }
 
   th {

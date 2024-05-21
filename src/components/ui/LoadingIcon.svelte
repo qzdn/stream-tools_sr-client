@@ -47,8 +47,6 @@
 
 <style>
   svg {
-    display: block;
-    margin: 0 auto 16px auto;
     width: 36px;
   }
 </style>
