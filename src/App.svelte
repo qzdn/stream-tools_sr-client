@@ -1,13 +1,8 @@
-<script lang="ts">
-  import Header from "./components/ui/Header.svelte";
-  import RequestsPlayer from "./components/ui/RequestsPlayer.svelte";
-  import RequestsTable from "./components/ui/RequestsTable.svelte";
+<script>
+  import "./app.css";
+  import Header from "./components/Header.svelte";
+  import MainSection from "./components/MainSection.svelte";
 </script>
 
-<div class="container">
-  <Header />
-  <main>
-    <RequestsPlayer />
-    <RequestsTable />
-  </main>
-</div>
+<Header />
+<MainSection />

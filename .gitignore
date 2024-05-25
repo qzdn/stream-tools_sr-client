@@ -13,9 +13,9 @@ dist-ssr
 *.local
 
 # Editor directories and files
-.vercel
-.vscode
-.venv
+.vscode/*
+!.vscode/extensions.json
+.idea
 .DS_Store
 *.suo
 *.ntvs*
@@ -23,3 +23,4 @@ dist-ssr
 *.sln
 *.sw?
 
+.vercel
