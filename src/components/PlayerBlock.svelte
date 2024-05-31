@@ -16,7 +16,7 @@
   let isVisible: boolean = true;
 
   export async function getVideoInfo(videoId) {
-    await fetch(`https://invidious.lunar.icu/api/v1/videos/${videoId}`)
+    await fetch(`https://invidious.darkness.services/api/v1/videos/${videoId}`)
       .then((response) => response.json())
       .then((info) => {
         src = info.formatStreams[0].url;
