@@ -1,7 +1,8 @@
 # Song requests
 A simple song request service, developed using Svelte. Designed for the purpose of studying Svelte and full-stack development in general 🙂
 
-![143_msedge_23-39-52](https://github.com/qzdn/twitch-tools_sr-client/assets/6467022/86c24a01-e909-410c-946e-884a05f814cc)
+![144_msedge_04-48-21](https://github.com/qzdn/stream-tools_sr-client/assets/6467022/1b166ff5-e676-40dd-a0b8-69d94bc6cbd5)
+
 
 ```
 yarn
